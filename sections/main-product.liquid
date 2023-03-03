@@ -569,6 +569,11 @@
   </script>
 </section>
 
+{% assign doc = product.metafields.app--6007307--sanity.published.value %}
+
+{% render 'portable-text', portableText: doc.body %}
+
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
