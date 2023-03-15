@@ -122,6 +122,14 @@
         "padding_bottom": 12
       }
     },
+    "3b958d91-64ad-4158-b77a-8ff17b40ea8f": {
+      "type": "profile-card",
+      "settings": {
+        "name": "{{ product.metafields.custom.profile.value.name.value }}",
+        "description": "{{ product.metafields.custom.profile.value.profile_description | metafield_tag }}",
+        "image": "{{ product.metafields.custom.profile.value.image.value }}"
+      }
+    },
     "9127379a-73f6-4931-a48f-74863692410b": {
       "type": "product-faq",
       "settings": {
@@ -225,6 +233,7 @@
   },
   "order": [
     "main",
+    "3b958d91-64ad-4158-b77a-8ff17b40ea8f",
     "9127379a-73f6-4931-a48f-74863692410b",
     "image-with-text",
     "multicolumn",
