@@ -1,0 +1,70 @@
+<style>
+  .profile-card {
+    display: flex;
+    gap: 50px;
+    background-color: #f5f5f5;
+    justify-content: center;
+    padding: 40px;
+  }
+  .profile-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .profile-card p {
+    max-width: 500px;
+  }
+</style>
+<section class="page-width">
+  <h2>Profile Card</h2>
+
+  <div class="profile-card">
+    <div>
+      {% if section.settings.name != blank %}
+        <h3>{{ section.settings.name }}</h3>
+      {% endif %}
+
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 250 | image_tag }}
+      {% endif %}
+    </div>
+
+    <div>
+      {% if section.settings.description != blank %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Profile Card",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Profile Card"
+    }
+  ]
+}
+{% endschema %}

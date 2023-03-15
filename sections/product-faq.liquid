@@ -1,26 +1,16 @@
-<script>
-  let metafieldData = {{ product.metafields.custom.product_faq.value | json }};
-  console.log(metafieldData);
-</script>
+{% assign faqSection = product.metafields.custom.product_faq.value %}
 
-<section>
-  {% assign swatches = product.metafields.custom.product_faq.value %}
-
-  {% for qa in swatches.question_and_answer.value %}
-    {{ qa | json }}
-    {% for q in qa %}
-      {{ q.first }}
-    {% endfor %}
+<section class="page-width">
+  <h2>Product FAQ</h2>
+  
+  {% for faq in faqSection.question_and_answer.value %}
+    <details>
+      <summary>
+        {{ faq.question }}
+      </summary>
+      <p>{{ faq.answer }}</p>
+    </details>
   {% endfor %}
-
-
-  {% comment %} <details>
-    {% for entry in product.metafields.custom.product_faq.value.question_and_answer %}
-      test
-      <summary>{{ entry.title }}</summary>
-      <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-    {% endfor %}
-  </details>  {% endcomment %}
 
 </section>
 
