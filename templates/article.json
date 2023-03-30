@@ -23,7 +23,9 @@
           }
         },
         "content": {
-          "type": "content"
+          "type": "content",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -31,10 +33,21 @@
         "title",
         "share",
         "content"
-      ]
+      ],
+      "settings": {
+      }
+    },
+    "b168040f-310f-4150-a7e4-fa59a6eb312f": {
+      "type": "profile-card",
+      "settings": {
+        "name": "{{ article.metafields.custom.author.value.name.value }}",
+        "description": "{{ article.metafields.custom.author.value.profile_description | metafield_tag }}",
+        "image": "{{ article.metafields.custom.author.value.image.value }}"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "b168040f-310f-4150-a7e4-fa59a6eb312f"
   ]
 }
