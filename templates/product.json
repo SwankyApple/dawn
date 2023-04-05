@@ -124,6 +124,7 @@
     },
     "3b958d91-64ad-4158-b77a-8ff17b40ea8f": {
       "type": "profile-card",
+      "disabled": true,
       "settings": {
         "name": "{{ product.metafields.custom.profile.value.name.value }}",
         "description": "{{ product.metafields.custom.profile.value.profile_description | metafield_tag }}",
