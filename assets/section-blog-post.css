@@ -92,6 +92,10 @@
   margin-bottom: 3rem;
 }
 
+article {
+  padding: 0 50px;
+}
+
 .article-template__social-sharing {
   margin-top: 3rem;
 }
